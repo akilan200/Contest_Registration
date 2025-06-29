@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules & Regulations - Panimalar Engineering College</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='panimalarLogo.png') }}">
+
+    <style>
+        .registration-form{
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        body{
+            background-image:url("{{ url_for('static', filename='bg1.jpg')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .college-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-direction: column;
+        }
+        .college-logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .college-name {
+            text-align: center;
+        }
+        .college-name h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #FFD700;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .college-name h4 {
+            font-size: 18px;
+            color: #FFA500;
+            margin-top: 5px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .rules-container {
+            padding: 20px;
+            max-height: 70vh;
+            overflow-y: auto;
+            margin: 0 -20px;
+        }
+
+        .rules-section {
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .rules-section h2 {
+            color: #00BFFF;
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-bottom: 2px solid #00BFFF;
+            padding-bottom: 8px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .rules-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .rules-list li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.5;
+            font-size: 16px;
+            color: #E0E0E0;
+        }
+
+        .rules-list li:before {
+            content: "•";
+            color: #B0E0E6;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .register-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #00BFFF;
+        }
+
+        .proceed-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #00BFFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .proceed-btn:hover {
+            background: #00FFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 191, 255, 0.5);
+        }
+
+        h1 {
+            color: #FFFFFF;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .rules-container {
+                max-height: 60vh;
+                padding: 15px 0;
+            }
+
+            .rules-section {
+                margin-bottom: 25px;
+                padding: 0 15px;
+            }
+
+            .rules-section h2 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+
+            .rules-list li {
+                font-size: 14px;
+                margin-bottom: 10px;
+                padding-left: 20px;
+            }
+
+            .proceed-btn {
+                padding: 12px 30px;
+                font-size: 16px;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rules-container {
+                max-height: 55vh;
+            }
+
+            .rules-section {
+                margin-bottom: 20px;
+                padding: 0 10px;
+            }
+
+            .rules-section h2 {
+                font-size: 18px;
+            }
+
+            .rules-list li {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .proceed-btn {
+                padding: 10px 25px;
+                font-size: 15px;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <div class="college-header">
+                <img src="{{ url_for('static', filename='panimalarLogo.png') }}" alt="Panimalar Engineering College Logo" class="college-logo">
+                <div class="college-name">
+                    <h2>PANIMALAR ENGINEERING COLLEGE</h2>
+                    <h4>CHENNAI CITY CAMPUS</h4>
+                </div>
+            </div>
+            <h1>Software Contest Rules & Regulations</h1>
+            
+            <div class="rules-container">
+                <div class="rules-section">
+                    <h2>Event Details</h2>
+                    <ul class="rules-list">
+                        <li>Individual registration only - Team registrations are not allowed</li>
+                        <li>The event consists of two rounds: Preliminary Round and Final Round</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h2>Preliminary Round</h2>
+                    <ul class="rules-list">
+                        <li>Format: Multiple Choice Questions (MCQs) based on Java</li>
+                        <li>Duration: 1 hour</li>
+                        <li>Top 20 participants will qualify for the Final Round</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h2>Final Round (Coding Round)</h2>
+                    <ul class="rules-list">
+                        <li>Participants will be provided with code containing minor errors</li>
+                        <li>The task is to debug the code to pass the given test cases</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="register-section">
+                <a href="{{ url_for('registration') }}" class="proceed-btn">Proceed to Registration</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
